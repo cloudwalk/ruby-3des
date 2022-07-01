@@ -1,3 +1,4 @@
+#include <assert.h>
 #include <openssl/des.h>
 #include "tdes_class.h"
 
