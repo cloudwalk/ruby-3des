@@ -8,6 +8,32 @@ Ruby native extension for triple DES cryptography.
 sudo gem install tdes
 ```
 
+## Building
+
+As a native extension, building this gem requires a C compiler toolchain.
+
+### Linux
+
+Having OpenSSL and Ruby installed, it should work out of the box.
+
+```bash
+rake clean compile
+```
+
+### MacOS
+
+You may need to explicitly set your OpenSSL installation directory:
+
+```bash
+export cflags='-std=c99 -I ~/.rbenv/versions/2.7.6/openssl/include/'
+export ldflags='-lcrypto -L ~/.rbenv/versions/2.7.6/openssl/lib/'
+rake clean compile
+```
+
+### Windows
+
+lol
+
 ## Examples
 
 ```ruby

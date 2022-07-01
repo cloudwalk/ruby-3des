@@ -2,8 +2,8 @@
 
 require 'mkmf'
 
-cflags = '-std=c99'
-ldflags = '-l:libcrypto.a'
+cflags = ENV['CFLAGS'] || '-std=c99'
+ldflags = ENV['LDFLAGS'] || '-l:libcrypto.a'
 with_cflags(cflags) do
   with_ldflags(ldflags) do
     abort 'missing openssl' unless have_library('ssl')
