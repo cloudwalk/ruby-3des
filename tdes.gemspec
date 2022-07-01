@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib".freeze]
   s.authors = ["Gabriel Bastos".freeze]
   s.date = "2022-07-01"
-  s.description = "triple DES encryption implemented in C".freeze
+  s.description = "triple DES encryption implemented in C using openssl".freeze
   s.email = "gabriel.bastos@cloudwalk.io".freeze
   s.extensions = ["ext/tdes/extconf.rb".freeze]
   s.extra_rdoc_files = [
@@ -27,6 +27,7 @@ Gem::Specification.new do |s|
     "lib/tdes.rb"
   ]
   s.homepage = "https://github.com/cloudwalk/ruby-3des".freeze
+  s.licenses = ["MIT".freeze]
   s.rubygems_version = "3.2.3".freeze
   s.summary = "triple DES encryption implemented in C".freeze
 
@@ -38,16 +39,10 @@ Gem::Specification.new do |s|
     s.add_runtime_dependency(%q<tdes>.freeze, [">= 0"])
     s.add_development_dependency(%q<rake-compiler>.freeze, [">= 0"])
     s.add_development_dependency(%q<jeweler>.freeze, [">= 0"])
-    s.add_development_dependency(%q<rake-compiler>.freeze, [">= 0"])
-    s.add_development_dependency(%q<jeweler>.freeze, [">= 0"])
-    s.add_runtime_dependency(%q<rake>.freeze, [">= 0"])
   else
     s.add_dependency(%q<tdes>.freeze, [">= 0"])
     s.add_dependency(%q<rake-compiler>.freeze, [">= 0"])
     s.add_dependency(%q<jeweler>.freeze, [">= 0"])
-    s.add_dependency(%q<rake-compiler>.freeze, [">= 0"])
-    s.add_dependency(%q<jeweler>.freeze, [">= 0"])
-    s.add_dependency(%q<rake>.freeze, [">= 0"])
   end
 end
 
