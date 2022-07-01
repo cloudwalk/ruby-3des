@@ -12,7 +12,7 @@ begin
     gem.summary = 'triple DES encryption implemented in C'
     gem.description = 'triple DES encryption implemented in C'
     gem.email = 'gabriel.bastos@cloudwalk.io'
-    gem.homepage = 'http://github.com/bbcoimbra/br-cnpj'
+    gem.homepage = 'https://github.com/cloudwalk/ruby-3des'
     gem.authors = ['Gabriel Bastos']
     gem.files = FileList['lib/**/*.rb', 'ext/**/*']
     gem.files.exclude 'lib/tdes/*.so'

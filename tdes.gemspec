@@ -26,7 +26,7 @@ Gem::Specification.new do |s|
     "ext/tdes/tdes_class.h",
     "lib/tdes.rb"
   ]
-  s.homepage = "http://github.com/bbcoimbra/br-cnpj".freeze
+  s.homepage = "https://github.com/cloudwalk/ruby-3des".freeze
   s.rubygems_version = "3.2.3".freeze
   s.summary = "triple DES encryption implemented in C".freeze
 
