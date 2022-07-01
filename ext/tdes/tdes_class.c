@@ -72,7 +72,7 @@ static VALUE tdes_encryption(VALUE self, VALUE data, int operation) {
 			&key->ks3,
 			operation
 		);
-		rb_str_buf_cat(encrypted, out, 8);
+		rb_str_buf_cat(encrypted, (char *) out, 8);
 	}
 
 	return encrypted;
