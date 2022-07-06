@@ -38,7 +38,7 @@ VALUE tdes_new(VALUE class, VALUE key) {
 		break;
 
 	default:
-		rb_raise(rb_eArgError, "Invalid DES key length");
+		rb_raise(rb_eArgError, "Invalid DES key length (%ld)", key_length);
 	}
 
 	rb_obj_call_init(self, 0, NULL);
