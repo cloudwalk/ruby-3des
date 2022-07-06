@@ -19,22 +19,12 @@ VALUE tdes_new(VALUE class, VALUE key) {
 		rb_raise(rb_eRuntimeError, "Failed to setup internal data");
 	}
 
-	int err;
 	switch (key_length) {
 	case 24:
-		err = DES_set_key_checked((void*) raw_key + 16, &key_data->ks3);
-		if (err) {
-			rb_raise(rb_eArgError, "Invalid DES key: %s", err == -1 ? "parity" : "weak");
-		}
+		DES_set_key_unchecked((void*) raw_key + 16, &key_data->ks3);
 	case 16:
-		err = DES_set_key_checked((void*) raw_key + 8, &key_data->ks2);
-		if (err) {
-			rb_raise(rb_eArgError, "Invalid DES key: %s", err == -1 ? "parity" : "weak");
-		}
-		err = DES_set_key_checked((void*) raw_key + 0, &key_data->ks1);
-		if (err) {
-			rb_raise(rb_eArgError, "Invalid DES key: %s", err == -1 ? "parity" : "weak");
-		}
+		DES_set_key_unchecked((void*) raw_key + 8, &key_data->ks2);
+		DES_set_key_unchecked((void*) raw_key + 0, &key_data->ks1);
 		break;
 
 	default:
