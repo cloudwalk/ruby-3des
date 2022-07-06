@@ -24,16 +24,16 @@ VALUE tdes_new(VALUE class, VALUE key) {
 	case 24:
 		err = DES_set_key_checked((void*) raw_key + 16, &key_data->ks3);
 		if (err) {
-			rb_raise(rb_eArgError, "Invalid DES key");
+			rb_raise(rb_eArgError, "Invalid DES key: %s", err == -1 ? "parity" : "weak");
 		}
 	case 16:
 		err = DES_set_key_checked((void*) raw_key + 8, &key_data->ks2);
 		if (err) {
-			rb_raise(rb_eArgError, "Invalid DES key");
+			rb_raise(rb_eArgError, "Invalid DES key: %s", err == -1 ? "parity" : "weak");
 		}
 		err = DES_set_key_checked((void*) raw_key + 0, &key_data->ks1);
 		if (err) {
-			rb_raise(rb_eArgError, "Invalid DES key");
+			rb_raise(rb_eArgError, "Invalid DES key: %s", err == -1 ? "parity" : "weak");
 		}
 		break;
 
