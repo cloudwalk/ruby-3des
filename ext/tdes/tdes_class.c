@@ -21,10 +21,15 @@ VALUE tdes_new(VALUE class, VALUE key) {
 
 	switch (key_length) {
 	case 24:
-		DES_set_key_unchecked((void*) raw_key + 16, &key_data->ks3);
-	case 16:
-		DES_set_key_unchecked((void*) raw_key + 8, &key_data->ks2);
 		DES_set_key_unchecked((void*) raw_key + 0, &key_data->ks1);
+		DES_set_key_unchecked((void*) raw_key + 8, &key_data->ks2);
+		DES_set_key_unchecked((void*) raw_key + 16, &key_data->ks3);
+		break;
+
+	case 16:
+		DES_set_key_unchecked((void*) raw_key + 0, &key_data->ks1);
+		DES_set_key_unchecked((void*) raw_key + 8, &key_data->ks2);
+		DES_set_key_unchecked((void*) raw_key + 0, &key_data->ks3);
 		break;
 
 	default:
