@@ -22,12 +22,20 @@ rake clean compile
 
 ### MacOS
 
-You may need to explicitly set your OpenSSL installation directory:
+You may need to explicitly set your OpenSSL installation directory
 
+rbenv:
 ```bash
-export cflags='-std=c99 -I ~/.rbenv/versions/2.7.6/openssl/include/'
-export ldflags='-lcrypto -L ~/.rbenv/versions/2.7.6/openssl/lib/'
+export CFLAGS='-std=c99 -I ~/.rbenv/versions/2.7.6/openssl/include/'
+export LDFLAGS='-lcrypto -L ~/.rbenv/versions/2.7.6/openssl/lib/'
 rake clean compile
+```
+
+homebrew with asdf:
+```bash
+export CFLAGS="-std=c99 -I /opt/homebrew/opt/openssl@1.1/include/"
+export LDFLAGS="-lcrypto -L /opt/homebrew/opt/openssl@1.1/lib/"
+export CPPFLAGS="-I /opt/homebrew/opt/openssl@1.1/include"
 ```
 
 ### Windows
