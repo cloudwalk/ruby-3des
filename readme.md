@@ -26,16 +26,16 @@ You may need to explicitly set your OpenSSL installation directory
 
 rbenv:
 ```bash
-export CFLAGS='-std=c99 -I ~/.rbenv/versions/2.7.6/openssl/include/'
-export LDFLAGS='-lcrypto -L ~/.rbenv/versions/2.7.6/openssl/lib/'
+export CFLAGS='-std=c99 -I ~/.rbenv/versions/3.0.2/openssl/include/'
+export LDFLAGS='-lcrypto -L ~/.rbenv/versions/3.0.2/openssl/lib/'
 rake clean compile
 ```
 
 homebrew with asdf:
 ```bash
-export CFLAGS="-std=c99 -I /opt/homebrew/opt/openssl@1.1/include/"
-export LDFLAGS="-lcrypto -L /opt/homebrew/opt/openssl@1.1/lib/"
-export CPPFLAGS="-I /opt/homebrew/opt/openssl@1.1/include"
+export CFLAGS="-std=c99 -I /opt/homebrew/opt/openssl@3.0/include/"
+export LDFLAGS="-lcrypto -L /opt/homebrew/opt/openssl@3.0/lib/"
+export CPPFLAGS="-I /opt/homebrew/opt/openssl@3.0/include"
 ```
 
 ### Windows
