@@ -14,9 +14,7 @@ with_cflags(cflags) do
     abort 'missing DES_ecb3_encrypt' unless have_func('DES_ecb3_encrypt', 'openssl/des.h')
 
     # Check for a symbol/function specific to OpenSSL 3.x
-    unless have_func('EVP_Cipher')
-      abort 'OpenSSL 3.x required (missing EVP_Cipher function)'
-    end
+    abort 'OpenSSL 3.x required (missing EVP_Cipher function)' unless have_func('EVP_Cipher')
 
     create_makefile 'tdes/tdes'
   end

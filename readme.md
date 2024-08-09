@@ -2,23 +2,44 @@
 
 Ruby native extension for triple DES cryptography.
 
-## Install
+## List all available rake tasks
+```bash
+rake --tasks
+```
 
+## Compile
+```bash
+rake clobber clean compile
+```
+
+## Run tests
+```bash
+rake test
+```
+
+## Build local version
+```bash
+rake build
+```
+
+## Build and Install local version
+```bash
+rake install
+```
+
+## Install version from Rubygems
 ```bash
 sudo gem install tdes
 ```
 
-## Building
-
-As a native extension, building this gem requires a C compiler toolchain.
+## Push to Rubygems
+```bash
+rake release
+```
 
 ### Linux
 
 Having OpenSSL and Ruby installed, it should work out of the box.
-
-```bash
-rake clean compile
-```
 
 ### MacOS
 
