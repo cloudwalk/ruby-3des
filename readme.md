@@ -38,6 +38,8 @@ sudo gem install tdes
 
 ## Push to Rubygems
 ```bash
+bundle install
+
 rake release
 ```
 
