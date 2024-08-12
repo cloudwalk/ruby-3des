@@ -16,6 +16,10 @@ rake clobber clean compile
 ```bash
 rake test
 ```
+Or
+```bash
+RUBY_VERSION=3.0 $SHELL -c 'docker run -it --rm --name my-running-script -v "$PWD":/usr/src/myapp -w /usr/src/myapp mirror.gcr.io/ruby:${RUBY_VERSION}-alpine bundle install && rake'
+```
 
 ## Build local version
 ```bash
@@ -71,7 +75,7 @@ require 'tdes'
 
 key = '1111111111111111'
 cipher = TDES::TDES.new(key)
-encrypted = cipher.encrypt('12345678') # "b\xDD\x8EJaN\x1A\xF9"
+encrypted = cipher.encrypt('12345678') # "\x85\x8B\x17m\xA8\xB1%\x03"
 decrypted = cipher.decrypt(encrypted) # "12345678"
 ```
 
