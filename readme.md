@@ -37,9 +37,19 @@ sudo gem install tdes
 ```
 
 ## Push to Rubygems
+
+1. Change the code
+2. Change the VERSION file
+3. Run:
 ```bash
 bundle install
-
+```
+4. Push the code
+5. Open the PR
+6. Merge into master
+7. Pull master
+8. Run:
+```bash
 rake release
 ```
 
