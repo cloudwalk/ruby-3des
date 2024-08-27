@@ -83,6 +83,7 @@ static VALUE tdes_decrypt(VALUE self, VALUE data) {
 
 void setup_tdes_class(VALUE module) {
 	VALUE tdes_class = rb_define_class_under(module, "TDES", rb_cObject);
+	rb_undef_alloc_func(tdes_class);
 	rb_define_singleton_method(tdes_class, "new", tdes_new, 1);
 	rb_define_method(tdes_class, "encrypt", tdes_encrypt, 1);
 	rb_define_method(tdes_class, "decrypt", tdes_decrypt, 1);
