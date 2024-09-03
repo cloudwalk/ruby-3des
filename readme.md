@@ -23,7 +23,7 @@ rake test
 ```
 Or
 ```bash
-RUBY_VERSION=3.0 $SHELL -c 'docker run -it --rm --name my-running-script -v "$PWD":/usr/src/myapp -w /usr/src/myapp mirror.gcr.io/ruby:${RUBY_VERSION}-alpine bundle install && rake'
+RUBY_VERSION=3.0 $SHELL -c 'docker build --build-arg RUBY_VERSION=${RUBY_VERSION} -t ruby-app:${RUBY_VERSION} . && docker run -it --rm ruby-app:${RUBY_VERSION}'
 ```
 
 ## Build local version
