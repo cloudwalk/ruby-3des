@@ -1,0 +1,28 @@
+name: Test
+permissions: read-all
+
+on:
+  push:
+
+jobs:
+  test:
+    name: Test Ruby Versions
+    timeout-minutes: 15
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        ruby-version: [3.0, 3.1, 3.2, 3.3]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build Docker image for Ruby ${{ matrix.ruby-version }}
+        run: |
+          docker build --build-arg RUBY_VERSION=${{ matrix.ruby-version }} -t ruby-app:${{ matrix.ruby-version }} .
+
+      - name: Run Tests with Docker
+        run: |
+          docker run --rm ruby-app:${{ matrix.ruby-version }}

@@ -21,9 +21,7 @@ Rake::TestTask.new do |t|
   t.libs << 'test'
 end
 
-task release: :build do
-  system "gem push pkg/tdes-#{Tdes::VERSION}.gem"
-end
+task release: :build
 
 desc 'Check if the compiled shared library exists'
 task :check_compile do
