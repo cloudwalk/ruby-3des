@@ -7,6 +7,11 @@ Ruby native extension for triple DES cryptography.
 rake --tasks
 ```
 
+## Generate Makefile
+```bash
+ruby ext/tdes/extconf.rb
+```
+
 ## Compile
 ```bash
 rake clobber clean compile
