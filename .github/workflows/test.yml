@@ -1,4 +1,5 @@
-name: On_Push
+name: Test
+permissions: read-all
 
 on:
   push:
