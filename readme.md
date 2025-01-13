@@ -2,6 +2,11 @@
 
 Ruby native extension for triple DES cryptography.
 
+## Install dependencies
+```bash
+bundle install
+```
+
 ## List all available rake tasks
 ```bash
 rake --tasks
